@@ -55,6 +55,7 @@ class MyHomePage extends StatelessWidget {
                             new TextSpan(
                               text: 'Rules\n\n',
                               style: new TextStyle(
+                                color: Color(0xff00aa70),
                                 fontWeight: FontWeight.w700,
                                 fontSize:
                                     MediaQuery.of(context).size.width * 0.069,
@@ -495,6 +496,21 @@ class MyHomePage extends StatelessWidget {
                         ),
                       ),
                     ),
+                  ),
+                ),
+                // Game Page Card
+                Container(
+                  height: MediaQuery.of(context).size.height * 0.8,
+                  width: MediaQuery.of(context).size.width * 0.75,
+                  decoration: new BoxDecoration(
+                    color: Color(0xff00c17a),
+                    borderRadius: new BorderRadius.all(
+                      Radius.circular(0.0),
+                    ),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.all(
+                        MediaQuery.of(context).size.width * 0.05),
                   ),
                 ),
                 // Landing Page Card
