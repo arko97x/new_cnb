@@ -347,13 +347,6 @@ class MyHomePage extends StatelessWidget {
                             ),
                           ),
                           new TextSpan(
-                            text:
-                                '---------------------------------------------------------------------------------\n\n',
-                            style: new TextStyle(
-                              color: Color(0xff00aa70),
-                            ),
-                          ),
-                          new TextSpan(
                             text: 'As an example,\n',
                             style: new TextStyle(
                               fontWeight: FontWeight.w400,
@@ -462,14 +455,6 @@ class MyHomePage extends StatelessWidget {
                                   MediaQuery.of(context).size.width * 0.049,
                             ),
                           ),
-                          new TextSpan(
-                            text: 'Cheers! :)',
-                            style: new TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontSize:
-                                  MediaQuery.of(context).size.width * 0.049,
-                            ),
-                          )
                         ],
                       ),
                     ),
