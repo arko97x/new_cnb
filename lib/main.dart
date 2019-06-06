@@ -81,6 +81,395 @@ class MyHomePage extends StatelessWidget {
                                   MediaQuery.of(context).size.width * 0.049,
                             ),
                           ),
+                          new TextSpan(
+                            text: 'You will have multiple chances to guess ',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: 'NUM',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                              background: Paint()..color = Colors.greenAccent,
+                            ),
+                          ),
+                          new TextSpan(text: '.\n\n'),
+                          new TextSpan(
+                            text: 'After every guess ',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: 'GUESS',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                              background: Paint()..color = Colors.greenAccent,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: ', press the SUBMIT button.\n\n',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: 'Based on your ',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: 'GUESS',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                              background: Paint()..color = Colors.greenAccent,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: ', you\'ll be shown the following: x',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: 'C',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: ', y',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: 'B',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(text: '.\n\n'),
+                          new TextSpan(
+                            text: 'C:',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: ' digit in ',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: 'GUESS',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                              background: Paint()..color = Colors.greenAccent,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: ' exists in ',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: 'NUM',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                              background: Paint()..color = Colors.greenAccent,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: ' but ',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: 'not',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: ' in the correct position.\n',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: 'Eg: 2C indicates 2 such digits exist.\n\n',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: 'B:',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: ' digit in ',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: 'GUESS',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                              background: Paint()..color = Colors.greenAccent,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: ' exists in ',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: 'NUM',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                              background: Paint()..color = Colors.greenAccent,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: ' and is in the ',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: 'correct',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: ' position.\n',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: 'Eg: 1B indicates 1 such digit exists.\n\n',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: 'The GOAL is to achieve ',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: '3B',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: '!\n\n',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text:
+                                '---------------------------------------------------------------------------------\n\n',
+                            style: new TextStyle(
+                              color: Color(0xff00aa70),
+                            ),
+                          ),
+                          new TextSpan(
+                            text: 'As an example,\n',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: 'if ',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: 'NUM',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                              background: Paint()..color = Colors.greenAccent,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: ' = 368 & ',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: 'GUESS',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                              background: Paint()..color = Colors.greenAccent,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: ' = 963, ',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: '1C, 1B',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: '.\n\n',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: '1B because 6 exists in ',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: 'NUM',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                              background: Paint()..color = Colors.greenAccent,
+                            ),
+                          ),
+                          new TextSpan(
+                            text:
+                                ' and is in the correct position.\n1C because 3 exists in ',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: 'NUM',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                              background: Paint()..color = Colors.greenAccent,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: ' but is not in the correct position.\n\n',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          ),
+                          new TextSpan(
+                            text: 'Cheers! :)',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                            ),
+                          )
                         ],
                       ),
                     ),
