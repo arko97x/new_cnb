@@ -30,7 +30,7 @@ class MyHomePage extends StatelessWidget {
             CarouselSlider(
               height: MediaQuery.of(context).size.height * 0.8,
               items: <Widget>[
-                // Card 1
+                // Rules Card
                 Container(
                   height: MediaQuery.of(context).size.height * 0.8,
                   width: MediaQuery.of(context).size.width * 0.75,
@@ -497,7 +497,7 @@ class MyHomePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                // Card 2
+                // Landing Page Card
                 Container(
                   height: MediaQuery.of(context).size.height * 0.8,
                   width: MediaQuery.of(context).size.width * 0.75,
@@ -505,6 +505,16 @@ class MyHomePage extends StatelessWidget {
                     color: Color(0xff00c17a),
                     borderRadius: new BorderRadius.all(
                       Radius.circular(0.0),
+                    ),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.all(
+                        MediaQuery.of(context).size.width * 0.05),
+                    child: new Image(
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height,
+                      fit: BoxFit.contain,
+                      image: new AssetImage('graphics/ti1.png'),
                     ),
                   ),
                 ),
