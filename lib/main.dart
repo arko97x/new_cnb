@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(fontFamily: 'Roboto'),
       home: MyHomePage(),
-      //To remove the DEBUG banner from the top-right corner
+      // To remove the DEBUG banner from the top-right corner
       debugShowCheckedModeBanner: false,
     );
   }
@@ -20,38 +20,40 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff00aa70),
-      //To center the whole damn thing
+      // To center the whole damn thing
       body: new Center(
         child: new Column(
-          //To center the widget vertically
+          // To center the widget vertically
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            //Card Carousel
+            // Card Carousel
             CarouselSlider(
               height: MediaQuery.of(context).size.height * 0.8,
               items: <Widget>[
-                //Card 1
+                // Card 1
                 Container(
                   height: MediaQuery.of(context).size.height * 0.8,
                   width: MediaQuery.of(context).size.width * 0.75,
                   decoration: new BoxDecoration(
                     color: Color(0xff00c17a),
                     borderRadius: new BorderRadius.all(
-                      Radius.circular(30.0),
+                      Radius.circular(0.0),
                     ),
                   ),
                   child: SingleChildScrollView(
+                    // Padding for the text
                     child: Padding(
                       padding: EdgeInsets.all(
                           MediaQuery.of(context).size.width * 0.05),
                       child: RichText(
+                        textAlign: TextAlign.justify,
                         text: TextSpan(
                           style: TextStyle(
                             color: Colors.white,
                           ),
                           children: <TextSpan>[
                             new TextSpan(
-                              text: 'Guess the Number\n\n',
+                              text: 'Rules\n\n',
                               style: new TextStyle(
                                 fontWeight: FontWeight.w700,
                                 fontSize:
@@ -60,7 +62,7 @@ class MyHomePage extends StatelessWidget {
                             ),
                             new TextSpan(
                               text:
-                                  'The app will randomly generate a 3 digit number ',
+                                  '>> The app will randomly generate a 3 digit number ',
                               style: new TextStyle(
                                 fontWeight: FontWeight.w400,
                                 fontSize:
@@ -85,7 +87,8 @@ class MyHomePage extends StatelessWidget {
                               ),
                             ),
                             new TextSpan(
-                              text: 'You will have multiple chances to guess ',
+                              text:
+                                  '>> You will have multiple chances to guess ',
                               style: new TextStyle(
                                 fontWeight: FontWeight.w400,
                                 fontSize:
@@ -101,9 +104,16 @@ class MyHomePage extends StatelessWidget {
                                 background: Paint()..color = Colors.greenAccent,
                               ),
                             ),
-                            new TextSpan(text: '.\n\n'),
                             new TextSpan(
-                              text: 'After every guess ',
+                              text: '.\n\n',
+                              style: new TextStyle(
+                                fontWeight: FontWeight.w400,
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.049,
+                              ),
+                            ),
+                            new TextSpan(
+                              text: '>> After every guess ',
                               style: new TextStyle(
                                 fontWeight: FontWeight.w400,
                                 fontSize:
@@ -128,7 +138,7 @@ class MyHomePage extends StatelessWidget {
                               ),
                             ),
                             new TextSpan(
-                              text: 'Based on your ',
+                              text: '>> Based on your ',
                               style: new TextStyle(
                                 fontWeight: FontWeight.w400,
                                 fontSize:
@@ -176,7 +186,22 @@ class MyHomePage extends StatelessWidget {
                                     MediaQuery.of(context).size.width * 0.049,
                               ),
                             ),
-                            new TextSpan(text: '.\n\n'),
+                            new TextSpan(
+                              text: '.\n\n',
+                              style: new TextStyle(
+                                fontWeight: FontWeight.w400,
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.049,
+                              ),
+                            ),
+                            new TextSpan(
+                              text: '>> ',
+                              style: new TextStyle(
+                                fontWeight: FontWeight.w400,
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.049,
+                              ),
+                            ),
                             new TextSpan(
                               text: 'C:',
                               style: new TextStyle(
@@ -245,6 +270,14 @@ class MyHomePage extends StatelessWidget {
                             ),
                             new TextSpan(
                               text: 'Eg: 2C indicates 2 such digits exist.\n\n',
+                              style: new TextStyle(
+                                fontWeight: FontWeight.w400,
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.049,
+                              ),
+                            ),
+                            new TextSpan(
+                              text: '>> ',
                               style: new TextStyle(
                                 fontWeight: FontWeight.w400,
                                 fontSize:
@@ -326,7 +359,7 @@ class MyHomePage extends StatelessWidget {
                               ),
                             ),
                             new TextSpan(
-                              text: 'The GOAL is to achieve ',
+                              text: '>> The GOAL is to achieve ',
                               style: new TextStyle(
                                 fontWeight: FontWeight.w400,
                                 fontSize:
@@ -350,7 +383,7 @@ class MyHomePage extends StatelessWidget {
                               ),
                             ),
                             new TextSpan(
-                              text: 'As an example,\n',
+                              text: '>> As an example,\n',
                               style: new TextStyle(
                                 fontWeight: FontWeight.w400,
                                 fontSize:
@@ -416,7 +449,7 @@ class MyHomePage extends StatelessWidget {
                               ),
                             ),
                             new TextSpan(
-                              text: '1B because 6 exists in ',
+                              text: '>> 1B because 6 exists in ',
                               style: new TextStyle(
                                 fontWeight: FontWeight.w400,
                                 fontSize:
@@ -464,14 +497,14 @@ class MyHomePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                //Card 2
+                // Card 2
                 Container(
                   height: MediaQuery.of(context).size.height * 0.8,
                   width: MediaQuery.of(context).size.width * 0.75,
                   decoration: new BoxDecoration(
                     color: Color(0xff00c17a),
                     borderRadius: new BorderRadius.all(
-                      Radius.circular(30.0),
+                      Radius.circular(0.0),
                     ),
                   ),
                 ),
