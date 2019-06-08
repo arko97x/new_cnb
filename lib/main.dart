@@ -19,7 +19,7 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff00aa70),
+      backgroundColor: Color(0xff20233e),
       // To center the whole damn thing
       body: new Center(
         child: new Column(
@@ -35,7 +35,7 @@ class MyHomePage extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.8,
                   width: MediaQuery.of(context).size.width * 0.75,
                   decoration: new BoxDecoration(
-                    color: Color(0xff00c17a),
+                    color: Color(0xff3a3f65),
                     borderRadius: new BorderRadius.all(
                       Radius.circular(0.0),
                     ),
@@ -62,8 +62,17 @@ class MyHomePage extends StatelessWidget {
                               ),
                             ),
                             new TextSpan(
+                              text: '>>',
+                              style: new TextStyle(
+                                color: Color(0xff00aa70),
+                                fontWeight: FontWeight.w700,
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.049,
+                              ),
+                            ),
+                            new TextSpan(
                               text:
-                                  '>> The app will randomly generate a 3 digit number ',
+                                  ' The app will randomly generate a 3 digit number ',
                               style: new TextStyle(
                                 fontWeight: FontWeight.w400,
                                 fontSize:
@@ -76,7 +85,7 @@ class MyHomePage extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontSize:
                                     MediaQuery.of(context).size.width * 0.049,
-                                background: Paint()..color = Colors.greenAccent,
+                                color: Color(0xffffae3e),
                               ),
                             ),
                             new TextSpan(
@@ -88,8 +97,16 @@ class MyHomePage extends StatelessWidget {
                               ),
                             ),
                             new TextSpan(
-                              text:
-                                  '>> You will have multiple chances to guess ',
+                              text: '>>',
+                              style: new TextStyle(
+                                color: Color(0xff00aa70),
+                                fontWeight: FontWeight.w700,
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.049,
+                              ),
+                            ),
+                            new TextSpan(
+                              text: ' You will have multiple chances to guess ',
                               style: new TextStyle(
                                 fontWeight: FontWeight.w400,
                                 fontSize:
@@ -102,7 +119,7 @@ class MyHomePage extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontSize:
                                     MediaQuery.of(context).size.width * 0.049,
-                                background: Paint()..color = Colors.greenAccent,
+                                color: Color(0xffffae3e),
                               ),
                             ),
                             new TextSpan(
@@ -114,7 +131,16 @@ class MyHomePage extends StatelessWidget {
                               ),
                             ),
                             new TextSpan(
-                              text: '>> After every guess ',
+                              text: '>>',
+                              style: new TextStyle(
+                                color: Color(0xff00aa70),
+                                fontWeight: FontWeight.w700,
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.049,
+                              ),
+                            ),
+                            new TextSpan(
+                              text: ' After every guess ',
                               style: new TextStyle(
                                 fontWeight: FontWeight.w400,
                                 fontSize:
@@ -127,7 +153,7 @@ class MyHomePage extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontSize:
                                     MediaQuery.of(context).size.width * 0.049,
-                                background: Paint()..color = Colors.greenAccent,
+                                color: Color(0xffffae3e),
                               ),
                             ),
                             new TextSpan(
@@ -139,7 +165,16 @@ class MyHomePage extends StatelessWidget {
                               ),
                             ),
                             new TextSpan(
-                              text: '>> Based on your ',
+                              text: '>>',
+                              style: new TextStyle(
+                                color: Color(0xff00aa70),
+                                fontWeight: FontWeight.w700,
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.049,
+                              ),
+                            ),
+                            new TextSpan(
+                              text: ' Based on your ',
                               style: new TextStyle(
                                 fontWeight: FontWeight.w400,
                                 fontSize:
@@ -152,7 +187,7 @@ class MyHomePage extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontSize:
                                     MediaQuery.of(context).size.width * 0.049,
-                                background: Paint()..color = Colors.greenAccent,
+                                color: Color(0xffffae3e),
                               ),
                             ),
                             new TextSpan(
@@ -198,9 +233,10 @@ class MyHomePage extends StatelessWidget {
                             new TextSpan(
                               text: '>> ',
                               style: new TextStyle(
-                                fontWeight: FontWeight.w400,
+                                fontWeight: FontWeight.w700,
                                 fontSize:
                                     MediaQuery.of(context).size.width * 0.049,
+                                color: Color(0xff00aa70),
                               ),
                             ),
                             new TextSpan(
@@ -225,7 +261,7 @@ class MyHomePage extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontSize:
                                     MediaQuery.of(context).size.width * 0.049,
-                                background: Paint()..color = Colors.greenAccent,
+                                color: Color(0xffffae3e),
                               ),
                             ),
                             new TextSpan(
@@ -242,7 +278,7 @@ class MyHomePage extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontSize:
                                     MediaQuery.of(context).size.width * 0.049,
-                                background: Paint()..color = Colors.greenAccent,
+                                color: Color(0xffffae3e),
                               ),
                             ),
                             new TextSpan(
@@ -280,9 +316,10 @@ class MyHomePage extends StatelessWidget {
                             new TextSpan(
                               text: '>> ',
                               style: new TextStyle(
-                                fontWeight: FontWeight.w400,
+                                fontWeight: FontWeight.w700,
                                 fontSize:
                                     MediaQuery.of(context).size.width * 0.049,
+                                color: Color(0xff00aa70),
                               ),
                             ),
                             new TextSpan(
@@ -307,7 +344,7 @@ class MyHomePage extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontSize:
                                     MediaQuery.of(context).size.width * 0.049,
-                                background: Paint()..color = Colors.greenAccent,
+                                color: Color(0xffffae3e),
                               ),
                             ),
                             new TextSpan(
@@ -324,7 +361,7 @@ class MyHomePage extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontSize:
                                     MediaQuery.of(context).size.width * 0.049,
-                                background: Paint()..color = Colors.greenAccent,
+                                color: Color(0xffffae3e),
                               ),
                             ),
                             new TextSpan(
@@ -360,7 +397,16 @@ class MyHomePage extends StatelessWidget {
                               ),
                             ),
                             new TextSpan(
-                              text: '>> The GOAL is to achieve ',
+                              text: '>>',
+                              style: new TextStyle(
+                                color: Color(0xff00aa70),
+                                fontWeight: FontWeight.w700,
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.049,
+                              ),
+                            ),
+                            new TextSpan(
+                              text: ' The GOAL is to achieve ',
                               style: new TextStyle(
                                 fontWeight: FontWeight.w400,
                                 fontSize:
@@ -384,7 +430,16 @@ class MyHomePage extends StatelessWidget {
                               ),
                             ),
                             new TextSpan(
-                              text: '>> As an example,\n',
+                              text: '>>',
+                              style: new TextStyle(
+                                color: Color(0xff00aa70),
+                                fontWeight: FontWeight.w700,
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.049,
+                              ),
+                            ),
+                            new TextSpan(
+                              text: ' As an example,\n',
                               style: new TextStyle(
                                 fontWeight: FontWeight.w400,
                                 fontSize:
@@ -405,7 +460,7 @@ class MyHomePage extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontSize:
                                     MediaQuery.of(context).size.width * 0.049,
-                                background: Paint()..color = Colors.greenAccent,
+                                color: Color(0xffffae3e),
                               ),
                             ),
                             new TextSpan(
@@ -422,7 +477,7 @@ class MyHomePage extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontSize:
                                     MediaQuery.of(context).size.width * 0.049,
-                                background: Paint()..color = Colors.greenAccent,
+                                color: Color(0xffffae3e),
                               ),
                             ),
                             new TextSpan(
@@ -450,7 +505,16 @@ class MyHomePage extends StatelessWidget {
                               ),
                             ),
                             new TextSpan(
-                              text: '>> 1B because 6 exists in ',
+                              text: '>>',
+                              style: new TextStyle(
+                                color: Color(0xff00aa70),
+                                fontWeight: FontWeight.w700,
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.049,
+                              ),
+                            ),
+                            new TextSpan(
+                              text: ' 1B because 6 exists in ',
                               style: new TextStyle(
                                 fontWeight: FontWeight.w400,
                                 fontSize:
@@ -463,7 +527,7 @@ class MyHomePage extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontSize:
                                     MediaQuery.of(context).size.width * 0.049,
-                                background: Paint()..color = Colors.greenAccent,
+                                color: Color(0xffffae3e),
                               ),
                             ),
                             new TextSpan(
@@ -481,7 +545,7 @@ class MyHomePage extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontSize:
                                     MediaQuery.of(context).size.width * 0.049,
-                                background: Paint()..color = Colors.greenAccent,
+                                color: Color(0xffffae3e),
                               ),
                             ),
                             new TextSpan(
@@ -503,7 +567,7 @@ class MyHomePage extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.8,
                   width: MediaQuery.of(context).size.width * 0.75,
                   decoration: new BoxDecoration(
-                    color: Color(0xff00c17a),
+                    color: Color(0xff3a3f65),
                     borderRadius: new BorderRadius.all(
                       Radius.circular(0.0),
                     ),
@@ -518,7 +582,7 @@ class MyHomePage extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.8,
                   width: MediaQuery.of(context).size.width * 0.75,
                   decoration: new BoxDecoration(
-                    color: Color(0xff00c17a),
+                    color: Color(0xff3a3f65),
                     borderRadius: new BorderRadius.all(
                       Radius.circular(0.0),
                     ),
@@ -530,7 +594,7 @@ class MyHomePage extends StatelessWidget {
                       width: MediaQuery.of(context).size.width,
                       height: MediaQuery.of(context).size.height,
                       fit: BoxFit.contain,
-                      image: new AssetImage('graphics/ti1.png'),
+                      image: new AssetImage('graphics/ti4.png'),
                     ),
                   ),
                 ),
