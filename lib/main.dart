@@ -15,7 +15,40 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key key, this.title}) : super(key: key);
+
+  final String title;
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  List<int> arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  int r1 = 0, r2 = 0, r3 = 0, r4 = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    arr.shuffle();
+    r1 = arr[0];
+    r2 = arr[1];
+    r3 = arr[2];
+    r4 = arr[3];
+  }
+
+  int currScore = 0;
+
+  int n1 = 1;
+  int n2 = 1;
+  int n3 = 1;
+  int n4 = 1;
+
+  int b = 0, c = 0, i, j;
+
+  var guesses = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -572,9 +605,419 @@ class MyHomePage extends StatelessWidget {
                       Radius.circular(0.0),
                     ),
                   ),
-                  child: Padding(
-                    padding: EdgeInsets.all(
-                        MediaQuery.of(context).size.width * 0.05),
+                  child: Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: EdgeInsets.all(
+                            MediaQuery.of(context).size.width * 0.05),
+                        child: Row(
+                          children: <Widget>[
+                            Text(
+                              'Turns',
+                              style: new TextStyle(
+                                color: Color(0xff00aa70),
+                                fontWeight: FontWeight.w700,
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.069,
+                              ),
+                            ),
+                            // Spacing container
+                            Container(
+                              width: MediaQuery.of(context).size.width * 0.01,
+                              height: MediaQuery.of(context).size.width * 0.069,
+                              color: Color(0xff3a3f65),
+                            ),
+                            Container(
+                              // Box for Text Display
+                              height: MediaQuery.of(context).size.width * 0.115,
+                              width: MediaQuery.of(context).size.width * 0.115,
+                              decoration: BoxDecoration(
+                                border: Border.all(color: Color(0xff00aa70)),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  '$currScore',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize:
+                                        MediaQuery.of(context).size.width *
+                                            0.069,
+                                    color: Color(0xff00aa70),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            // Spacing container
+                            Container(
+                              width: MediaQuery.of(context).size.width * 0.045,
+                              height: MediaQuery.of(context).size.width * 0.069,
+                              color: Color(0xff3a3f65),
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Container(
+                                  child: ButtonTheme(
+                                    minWidth: 80.0,
+                                    child: RaisedButton(
+                                      color: Color(0xff00aa70),
+                                      onPressed: () {
+                                        currScore = 0;
+                                        n1 = 1;
+                                        n2 = 1;
+                                        n3 = 1;
+                                        n4 = 1;
+                                        b = 0;
+                                        c = 0;
+                                        arr.shuffle();
+                                        r1 = arr[0];
+                                        r2 = arr[1];
+                                        r3 = arr[2];
+                                        r4 = arr[3];
+                                        guesses = '';
+                                        setState(() {});
+                                        debugPrint('$r1\t$r2\t$r3\t$r4\n');
+                                      },
+                                      child: Text(
+                                        'Play Again',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          fontSize: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.047,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      // Spacing container
+                      Container(
+                        width: MediaQuery.of(context).size.width * 0.05,
+                        height: MediaQuery.of(context).size.width * 0.029,
+                        color: Color(0xff3a3f65),
+                      ),
+                      Container(
+                        // Box for Text Display
+                        height: MediaQuery.of(context).size.width * 0.45,
+                        width: MediaQuery.of(context).size.width * 0.65,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Color(0xff00aa70)),
+                        ),
+                        child: SingleChildScrollView(
+                          child: Text('$guesses'),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width * 0.05,
+                        ),
+                        child: Row(
+                          children: <Widget>[
+                            Column(
+                              children: <Widget>[
+                                IconButton(
+                                  color: Color(0xff00aa70),
+                                  icon: Icon(Icons.keyboard_arrow_up),
+                                  iconSize:
+                                      MediaQuery.of(context).size.width * 0.069,
+                                  onPressed: () {
+                                    if (n1 < 9) {
+                                      n1++;
+                                      setState(() {});
+                                    }
+                                  },
+                                ),
+                                Container(
+                                  // Box for Text Display
+                                  height:
+                                      MediaQuery.of(context).size.width * 0.115,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.115,
+                                  decoration: BoxDecoration(
+                                    border:
+                                        Border.all(color: Color(0xff00aa70)),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      '$n1',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontSize:
+                                            MediaQuery.of(context).size.width *
+                                                0.069,
+                                        color: Color(0xff00aa70),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                IconButton(
+                                  color: Color(0xff00aa70),
+                                  icon: Icon(Icons.keyboard_arrow_down),
+                                  iconSize:
+                                      MediaQuery.of(context).size.width * 0.069,
+                                  onPressed: () {
+                                    if (n1 > 1) {
+                                      n1--;
+                                      setState(() {});
+                                    }
+                                  },
+                                ),
+                              ],
+                            ),
+                            // Spacing container
+                            Container(
+                              width: MediaQuery.of(context).size.width * 0.06,
+                              height: MediaQuery.of(context).size.width * 0.029,
+                              color: Color(0xff3a3f65),
+                            ),
+                            Column(
+                              children: <Widget>[
+                                IconButton(
+                                  color: Color(0xff00aa70),
+                                  icon: Icon(Icons.keyboard_arrow_up),
+                                  iconSize:
+                                      MediaQuery.of(context).size.width * 0.069,
+                                  onPressed: () {
+                                    if (n2 < 9) {
+                                      n2++;
+                                      setState(() {});
+                                    }
+                                  },
+                                ),
+                                Container(
+                                  // Box for Text Display
+                                  height:
+                                      MediaQuery.of(context).size.width * 0.115,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.115,
+                                  decoration: BoxDecoration(
+                                    border:
+                                        Border.all(color: Color(0xff00aa70)),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      '$n2',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontSize:
+                                            MediaQuery.of(context).size.width *
+                                                0.069,
+                                        color: Color(0xff00aa70),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                IconButton(
+                                  color: Color(0xff00aa70),
+                                  icon: Icon(Icons.keyboard_arrow_down),
+                                  iconSize:
+                                      MediaQuery.of(context).size.width * 0.069,
+                                  onPressed: () {
+                                    if (n2 > 1) {
+                                      n2--;
+                                      setState(() {});
+                                    }
+                                  },
+                                ),
+                              ],
+                            ),
+                            // Spacing container
+                            Container(
+                              width: MediaQuery.of(context).size.width * 0.07,
+                              height: MediaQuery.of(context).size.width * 0.029,
+                              color: Color(0xff3a3f65),
+                            ),
+                            Column(
+                              children: <Widget>[
+                                IconButton(
+                                  color: Color(0xff00aa70),
+                                  icon: Icon(Icons.keyboard_arrow_up),
+                                  iconSize:
+                                      MediaQuery.of(context).size.width * 0.069,
+                                  onPressed: () {
+                                    if (n3 < 9) {
+                                      n3++;
+                                      setState(() {});
+                                    }
+                                  },
+                                ),
+                                Container(
+                                  // Box for Text Display
+                                  height:
+                                      MediaQuery.of(context).size.width * 0.115,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.115,
+                                  decoration: BoxDecoration(
+                                    border:
+                                        Border.all(color: Color(0xff00aa70)),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      '$n3',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontSize:
+                                            MediaQuery.of(context).size.width *
+                                                0.069,
+                                        color: Color(0xff00aa70),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                IconButton(
+                                  color: Color(0xff00aa70),
+                                  icon: Icon(Icons.keyboard_arrow_down),
+                                  iconSize:
+                                      MediaQuery.of(context).size.width * 0.069,
+                                  onPressed: () {
+                                    if (n3 > 1) {
+                                      n3--;
+                                      setState(() {});
+                                    }
+                                  },
+                                ),
+                              ],
+                            ),
+                            // Spacing container
+                            Container(
+                              width: MediaQuery.of(context).size.width * 0.06,
+                              height: MediaQuery.of(context).size.width * 0.029,
+                              color: Color(0xff3a3f65),
+                            ),
+                            Column(
+                              children: <Widget>[
+                                IconButton(
+                                  color: Color(0xff00aa70),
+                                  icon: Icon(Icons.keyboard_arrow_up),
+                                  iconSize:
+                                      MediaQuery.of(context).size.width * 0.069,
+                                  onPressed: () {
+                                    if (n4 < 9) {
+                                      n4++;
+                                      setState(() {});
+                                    }
+                                  },
+                                ),
+                                Container(
+                                  // Box for Text Display
+                                  height:
+                                      MediaQuery.of(context).size.width * 0.115,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.115,
+                                  decoration: BoxDecoration(
+                                    border:
+                                        Border.all(color: Color(0xff00aa70)),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      '$n4',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontSize:
+                                            MediaQuery.of(context).size.width *
+                                                0.069,
+                                        color: Color(0xff00aa70),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                IconButton(
+                                  color: Color(0xff00aa70),
+                                  icon: Icon(Icons.keyboard_arrow_down),
+                                  iconSize:
+                                      MediaQuery.of(context).size.width * 0.069,
+                                  onPressed: () {
+                                    if (n4 > 1) {
+                                      n4--;
+                                      setState(() {});
+                                    }
+                                  },
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        child: ButtonTheme(
+                          minWidth: MediaQuery.of(context).size.width * 0.65,
+                          child: RaisedButton(
+                            color: Color(0xff00aa70),
+                            onPressed: () {
+                              if (n1 == n2 ||
+                                  n2 == n3 ||
+                                  n1 == n3 ||
+                                  n1 == n4 ||
+                                  n2 == n4 ||
+                                  n3 == n4) {
+                                showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) {
+                                      return AlertDialog(
+                                        content: Text(
+                                            'Every digit has to be UNIQUE'),
+                                      );
+                                    });
+                              } else {
+                                List<int> req = [0, 0, 0, 0];
+                                req[0] = r1;
+                                req[1] = r2;
+                                req[2] = r3;
+                                req[3] = r4;
+                                List<int> ans = [0, 0, 0, 0];
+                                ans[0] = n1;
+                                ans[1] = n2;
+                                ans[2] = n3;
+                                ans[3] = n4;
+                                for (i = 0; i < 4; i++) {
+                                  for (j = 0; j < 4; j++) {
+                                    if (req[i] == ans[j]) {
+                                      if (i != j)
+                                        c++;
+                                      else {
+                                        b++;
+                                        if (b == 4) {
+                                          showDialog(
+                                              context: context,
+                                              builder: (BuildContext context) {
+                                                return AlertDialog(
+                                                  content: Text(
+                                                      'You GUESSED the number in $currScore turn(s)!'),
+                                                );
+                                              });
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                                currScore++;
+                                guesses += '\n$n1$n2$n3$n4: $b B, $c C';
+                                setState(() {});
+                                debugPrint('Req:$r1$r2$r3$r4');
+                                debugPrint('Guess:$n1$n2$n3$n4');
+                                debugPrint('Turn #: $currScore\n');
+                                b = 0;
+                                c = 0;
+                              }
+                            },
+                            child: Text(
+                              'Submit Guess',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize:
+                                      MediaQuery.of(context).size.width * 0.047,
+                                  color: Colors.white),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 // Landing Page Card
