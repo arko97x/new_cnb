@@ -72,7 +72,7 @@ class MyHomePage extends StatelessWidget {
                             ),
                             new TextSpan(
                               text:
-                                  ' The app will randomly generate a 3 digit number ',
+                                  ' The app will randomly generate a 4 digit number ',
                               style: new TextStyle(
                                 fontWeight: FontWeight.w400,
                                 fontSize:
