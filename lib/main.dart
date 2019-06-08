@@ -414,7 +414,7 @@ class MyHomePage extends StatelessWidget {
                               ),
                             ),
                             new TextSpan(
-                              text: '3B',
+                              text: '4B',
                               style: new TextStyle(
                                 fontWeight: FontWeight.w700,
                                 fontSize:
