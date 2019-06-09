@@ -678,7 +678,9 @@ class _MyHomePageState extends State<MyHomePage> {
                               children: <Widget>[
                                 Container(
                                   child: ButtonTheme(
-                                    minWidth: 80.0,
+                                    minWidth:
+                                        MediaQuery.of(context).size.width *
+                                            0.025,
                                     child: RaisedButton(
                                       color: Color(0xff00aa70),
                                       onPressed: () {
@@ -731,7 +733,14 @@ class _MyHomePageState extends State<MyHomePage> {
                           border: Border.all(color: Color(0xff00aa70)),
                         ),
                         child: SingleChildScrollView(
-                          child: Text('$guesses'),
+                          child: Text(
+                            '$guesses',
+                            style: TextStyle(
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.049,
+                              color: Color(0xff00aa70),
+                            ),
+                          ),
                         ),
                       ),
                       Padding(
