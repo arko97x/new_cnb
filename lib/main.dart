@@ -632,6 +632,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         padding: EdgeInsets.all(
                             MediaQuery.of(context).size.width * 0.05),
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
                             Text(
                               'Turns',
@@ -642,12 +643,12 @@ class _MyHomePageState extends State<MyHomePage> {
                                     MediaQuery.of(context).size.width * 0.069,
                               ),
                             ),
-                            // Spacing container
-                            Container(
-                              width: MediaQuery.of(context).size.width * 0.01,
-                              height: MediaQuery.of(context).size.width * 0.069,
-                              color: Color(0xff3a3f65),
-                            ),
+                            // // Spacing container
+                            // Container(
+                            //   width: MediaQuery.of(context).size.width * 0.01,
+                            //   height: MediaQuery.of(context).size.width * 0.069,
+                            //   color: Color(0xff3a3f65),
+                            // ),
                             Container(
                               // Box for Text Display
                               height: MediaQuery.of(context).size.width * 0.115,
@@ -668,19 +669,19 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ),
                               ),
                             ),
-                            // Spacing container
-                            Container(
-                              width: MediaQuery.of(context).size.width * 0.045,
-                              height: MediaQuery.of(context).size.width * 0.069,
-                              color: Color(0xff3a3f65),
-                            ),
+                            // // Spacing container
+                            // Container(
+                            //   width: MediaQuery.of(context).size.width * 0.045,
+                            //   height: MediaQuery.of(context).size.width * 0.069,
+                            //   color: Color(0xff3a3f65),
+                            // ),
                             Row(
                               children: <Widget>[
                                 Container(
                                   child: ButtonTheme(
                                     minWidth:
                                         MediaQuery.of(context).size.width *
-                                            0.025,
+                                            0.015,
                                     child: RaisedButton(
                                       color: Color(0xff00aa70),
                                       onPressed: () {
@@ -701,7 +702,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                         debugPrint('$r1\t$r2\t$r3\t$r4\n');
                                       },
                                       child: Text(
-                                        'Play Again',
+                                        'Again?',
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                           fontSize: MediaQuery.of(context)
@@ -749,6 +750,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           right: MediaQuery.of(context).size.width * 0.05,
                         ),
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
                             Column(
                               children: <Widget>[
@@ -801,12 +803,12 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ),
                               ],
                             ),
-                            // Spacing container
-                            Container(
-                              width: MediaQuery.of(context).size.width * 0.06,
-                              height: MediaQuery.of(context).size.width * 0.029,
-                              color: Color(0xff3a3f65),
-                            ),
+                            // // Spacing container
+                            // Container(
+                            //   width: MediaQuery.of(context).size.width * 0.06,
+                            //   height: MediaQuery.of(context).size.width * 0.029,
+                            //   color: Color(0xff3a3f65),
+                            // ),
                             Column(
                               children: <Widget>[
                                 IconButton(
@@ -858,12 +860,12 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ),
                               ],
                             ),
-                            // Spacing container
-                            Container(
-                              width: MediaQuery.of(context).size.width * 0.07,
-                              height: MediaQuery.of(context).size.width * 0.029,
-                              color: Color(0xff3a3f65),
-                            ),
+                            // // Spacing container
+                            // Container(
+                            //   width: MediaQuery.of(context).size.width * 0.07,
+                            //   height: MediaQuery.of(context).size.width * 0.029,
+                            //   color: Color(0xff3a3f65),
+                            // ),
                             Column(
                               children: <Widget>[
                                 IconButton(
@@ -915,12 +917,12 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ),
                               ],
                             ),
-                            // Spacing container
-                            Container(
-                              width: MediaQuery.of(context).size.width * 0.06,
-                              height: MediaQuery.of(context).size.width * 0.029,
-                              color: Color(0xff3a3f65),
-                            ),
+                            // // Spacing container
+                            // Container(
+                            //   width: MediaQuery.of(context).size.width * 0.06,
+                            //   height: MediaQuery.of(context).size.width * 0.029,
+                            //   color: Color(0xff3a3f65),
+                            // ),
                             Column(
                               children: <Widget>[
                                 IconButton(
