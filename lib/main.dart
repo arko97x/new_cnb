@@ -734,6 +734,8 @@ class _MyHomePageState extends State<MyHomePage> {
                           border: Border.all(color: Color(0xff00aa70)),
                         ),
                         child: SingleChildScrollView(
+                          scrollDirection: Axis.vertical,
+                          reverse: true,
                           child: Text(
                             '$guesses',
                             style: TextStyle(
