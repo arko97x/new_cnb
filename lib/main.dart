@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-// import 'package:shared_preferences/shared_preferences.dart';
-// import 'dart:async';
 
 void main() => runApp(MyApp());
 
@@ -29,7 +27,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final key = new GlobalKey<ScaffoldState>();
   List<int> arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-  int r1 = 0, r2 = 0, r3 = 0, r4 = 0;
+  int r1 = 0, r2 = 0, r3 = 0, r4 = 0, num = 0;
 
   @override
   void initState() {
@@ -647,12 +645,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                     MediaQuery.of(context).size.width * 0.069,
                               ),
                             ),
-                            // // Spacing container
-                            // Container(
-                            //   width: MediaQuery.of(context).size.width * 0.01,
-                            //   height: MediaQuery.of(context).size.width * 0.069,
-                            //   color: Color(0xff3a3f65),
-                            // ),
                             Container(
                               // Box for Text Display
                               height: MediaQuery.of(context).size.width * 0.115,
@@ -673,12 +665,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ),
                               ),
                             ),
-                            // // Spacing container
-                            // Container(
-                            //   width: MediaQuery.of(context).size.width * 0.045,
-                            //   height: MediaQuery.of(context).size.width * 0.069,
-                            //   color: Color(0xff3a3f65),
-                            // ),
                             Row(
                               children: <Widget>[
                                 Container(
@@ -818,12 +804,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ),
                               ],
                             ),
-                            // // Spacing container
-                            // Container(
-                            //   width: MediaQuery.of(context).size.width * 0.06,
-                            //   height: MediaQuery.of(context).size.width * 0.029,
-                            //   color: Color(0xff3a3f65),
-                            // ),
                             Column(
                               children: <Widget>[
                                 IconButton(
@@ -875,12 +855,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ),
                               ],
                             ),
-                            // // Spacing container
-                            // Container(
-                            //   width: MediaQuery.of(context).size.width * 0.07,
-                            //   height: MediaQuery.of(context).size.width * 0.029,
-                            //   color: Color(0xff3a3f65),
-                            // ),
                             Column(
                               children: <Widget>[
                                 IconButton(
@@ -932,12 +906,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ),
                               ],
                             ),
-                            // // Spacing container
-                            // Container(
-                            //   width: MediaQuery.of(context).size.width * 0.06,
-                            //   height: MediaQuery.of(context).size.width * 0.029,
-                            //   color: Color(0xff3a3f65),
-                            // ),
                             Column(
                               children: <Widget>[
                                 IconButton(
@@ -1025,6 +993,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ans[1] = n2;
                                 ans[2] = n3;
                                 ans[3] = n4;
+
                                 for (i = 0; i < 4; i++) {
                                   for (j = 0; j < 4; j++) {
                                     if (req[i] == ans[j]) {
@@ -1033,14 +1002,18 @@ class _MyHomePageState extends State<MyHomePage> {
                                       else {
                                         b++;
                                         if (b == 4) {
-                                          showDialog(
-                                              context: context,
-                                              builder: (BuildContext context) {
-                                                return AlertDialog(
-                                                  content: Text(
-                                                      'You GUESSED the number in $currScore turn(s)!'),
-                                                );
-                                              });
+                                          key.currentState.showSnackBar(
+                                            new SnackBar(
+                                              backgroundColor:
+                                                  Color(0xff00aa70),
+                                              content: new Text(
+                                                'You GUESSED the number in $currScore turn(s)!',
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                    color: Colors.white),
+                                              ),
+                                            ),
+                                          );
                                         }
                                       }
                                     }
