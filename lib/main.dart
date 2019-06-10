@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+// import 'package:shared_preferences/shared_preferences.dart';
+// import 'dart:async';
 
 void main() => runApp(MyApp());
 
@@ -25,6 +27,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final key = new GlobalKey<ScaffoldState>();
   List<int> arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   int r1 = 0, r2 = 0, r3 = 0, r4 = 0;
 
@@ -52,6 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: key,
       backgroundColor: Color(0xff20233e),
       // To center the whole damn thing
       body: new Center(
@@ -736,12 +740,21 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: SingleChildScrollView(
                           scrollDirection: Axis.vertical,
                           reverse: true,
-                          child: Text(
-                            '$guesses',
-                            style: TextStyle(
-                              fontSize:
-                                  MediaQuery.of(context).size.width * 0.049,
-                              color: Color(0xff00aa70),
+                          child: Center(
+                            child: Padding(
+                              padding: EdgeInsets.only(
+                                top: MediaQuery.of(context).size.width * 0.05,
+                                bottom:
+                                    MediaQuery.of(context).size.width * 0.05,
+                              ),
+                              child: Text(
+                                '$guesses',
+                                style: TextStyle(
+                                  fontSize:
+                                      MediaQuery.of(context).size.width * 0.049,
+                                  color: Color(0xff00aa70),
+                                ),
+                              ),
                             ),
                           ),
                         ),
@@ -991,14 +1004,16 @@ class _MyHomePageState extends State<MyHomePage> {
                                   n1 == n4 ||
                                   n2 == n4 ||
                                   n3 == n4) {
-                                showDialog(
-                                    context: context,
-                                    builder: (BuildContext context) {
-                                      return AlertDialog(
-                                        content: Text(
-                                            'Every digit has to be UNIQUE'),
-                                      );
-                                    });
+                                key.currentState.showSnackBar(
+                                  new SnackBar(
+                                    backgroundColor: Color(0xff00aa70),
+                                    content: new Text(
+                                      'Every digit must be UNIQUE',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ),
+                                );
                               } else {
                                 List<int> req = [0, 0, 0, 0];
                                 req[0] = r1;
