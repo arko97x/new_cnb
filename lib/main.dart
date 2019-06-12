@@ -1158,40 +1158,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                   b = 0;
                                   c = 0;
                                 }
-
-                                // for (i = 0; i < 4; i++) {
-                                //   for (j = 0; j < 4; j++) {
-                                //     if (req[i] == ans[j]) {
-                                //       if (i != j)
-                                //         c++;
-                                //       else {
-                                //         b++;
-                                //         if (b == 4) {
-                                //           key.currentState.showSnackBar(
-                                //             new SnackBar(
-                                //               backgroundColor:
-                                //                   Color(0xff00aa70),
-                                //               content: new Text(
-                                //                 'You GUESSED the number in $currScore turn(s)!',
-                                //                 textAlign: TextAlign.center,
-                                //                 style: TextStyle(
-                                //                     color: Colors.white),
-                                //               ),
-                                //             ),
-                                //           );
-                                //         }
-                                //       }
-                                //     }
-                                //   }
-                                // }
-                                // currScore++;
-                                // guesses += '\n$n1$n2$n3$n4: $b B, $c C';
-                                // setState(() {});
-                                // debugPrint('Req:$r1$r2$r3$r4');
-                                // debugPrint('Guess:$n1$n2$n3$n4');
-                                // debugPrint('Turn #: $currScore\n');
-                                // b = 0;
-                                // c = 0;
                               }
                             },
                             child: Text(
