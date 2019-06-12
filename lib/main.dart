@@ -623,6 +623,34 @@ class _MyHomePageState extends State<MyHomePage> {
                                     MediaQuery.of(context).size.width * 0.049,
                               ),
                             ),
+                            new TextSpan(
+                              text:
+                                  'NOTE: To RESET the number to be guessed, press the ',
+                              style: new TextStyle(
+                                color: Color(0xff00aa70),
+                                fontWeight: FontWeight.w500,
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.049,
+                              ),
+                            ),
+                            new TextSpan(
+                              text: '"Again?" ',
+                              style: new TextStyle(
+                                color: Color(0xffffae3e),
+                                fontWeight: FontWeight.w500,
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.049,
+                              ),
+                            ),
+                            new TextSpan(
+                              text: 'button.',
+                              style: new TextStyle(
+                                color: Color(0xff00aa70),
+                                fontWeight: FontWeight.w500,
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.049,
+                              ),
+                            ),
                           ],
                         ),
                       ),
