@@ -27,7 +27,12 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final key = new GlobalKey<ScaffoldState>();
   List<int> arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-  int r1 = 0, r2 = 0, r3 = 0, r4 = 0, num = 0;
+  int r1 = 0, r2 = 0, r3 = 0, r4 = 0;
+
+  int finalScore = 0;
+
+  List<int> alreadyGuessed = [];
+  int flag = 0, num = 0;
 
   @override
   void initState() {
@@ -688,6 +693,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                         r3 = arr[2];
                                         r4 = arr[3];
                                         guesses = '';
+                                        num = 0;
+                                        flag = 0;
+                                        alreadyGuessed?.clear();
                                         setState(() {});
                                         debugPrint('$r1\t$r2\t$r3\t$r4\n');
                                       },
@@ -974,6 +982,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   n3 == n4) {
                                 key.currentState.showSnackBar(
                                   new SnackBar(
+                                    duration: Duration(seconds: 1),
                                     backgroundColor: Color(0xff00aa70),
                                     content: new Text(
                                       'Every digit must be UNIQUE',
@@ -993,40 +1002,196 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ans[1] = n2;
                                 ans[2] = n3;
                                 ans[3] = n4;
-
-                                for (i = 0; i < 4; i++) {
-                                  for (j = 0; j < 4; j++) {
-                                    if (req[i] == ans[j]) {
-                                      if (i != j)
-                                        c++;
-                                      else {
-                                        b++;
-                                        if (b == 4) {
-                                          key.currentState.showSnackBar(
-                                            new SnackBar(
-                                              backgroundColor:
-                                                  Color(0xff00aa70),
-                                              content: new Text(
-                                                'You GUESSED the number in $currScore turn(s)!',
-                                                textAlign: TextAlign.center,
-                                                style: TextStyle(
-                                                    color: Colors.white),
+                                num = (ans[0] * 1000) +
+                                    (ans[1] * 100) +
+                                    (ans[2] * 10) +
+                                    ans[3];
+                                int len = alreadyGuessed.length;
+                                if (len != 0) {
+                                  for (i in alreadyGuessed) {
+                                    if (num == i) {
+                                      flag = 1;
+                                      break;
+                                    }
+                                  }
+                                  if (flag == 1) {
+                                    // Toast message for repeated guess
+                                    key.currentState.showSnackBar(
+                                      new SnackBar(
+                                        duration: Duration(seconds: 1),
+                                        backgroundColor: Color(0xff00aa70),
+                                        content: new Text(
+                                          'You\'ve already tried this number!',
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      ),
+                                    );
+                                    flag = 0;
+                                  } else {
+                                    alreadyGuessed.add(num);
+                                    debugPrint('alGu: $alreadyGuessed');
+                                    // Check guess
+                                    for (i = 0; i < 4; i++) {
+                                      for (j = 0; j < 4; j++) {
+                                        if (req[i] == ans[j]) {
+                                          if (i != j)
+                                            c++;
+                                          else {
+                                            b++;
+                                            if (b == 4) {
+                                              finalScore = currScore + 1;
+                                              key.currentState.showSnackBar(
+                                                new SnackBar(
+                                                  duration:
+                                                      Duration(seconds: 30),
+                                                  backgroundColor:
+                                                      Color(0xff00aa70),
+                                                  content: new Text(
+                                                    'You GUESSED the number in $finalScore turn(s)!',
+                                                    textAlign: TextAlign.center,
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                  ),
+                                                  action: SnackBarAction(
+                                                    label: 'Play Again',
+                                                    onPressed: () {
+                                                      currScore = 0;
+                                                      n1 = 1;
+                                                      n2 = 1;
+                                                      n3 = 1;
+                                                      n4 = 1;
+                                                      b = 0;
+                                                      c = 0;
+                                                      arr.shuffle();
+                                                      r1 = arr[0];
+                                                      r2 = arr[1];
+                                                      r3 = arr[2];
+                                                      r4 = arr[3];
+                                                      guesses = '';
+                                                      num = 0;
+                                                      flag = 0;
+                                                      alreadyGuessed?.clear();
+                                                      setState(() {});
+                                                      debugPrint(
+                                                          '$r1\t$r2\t$r3\t$r4\n');
+                                                    },
+                                                  ),
+                                                ),
+                                              );
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                    currScore++;
+                                    guesses += '\n$n1$n2$n3$n4: $b B, $c C';
+                                    setState(() {});
+                                    debugPrint('Req:$r1$r2$r3$r4');
+                                    debugPrint('Guess:$n1$n2$n3$n4');
+                                    debugPrint('Turn #: $currScore\n');
+                                    b = 0;
+                                    c = 0;
+                                  }
+                                } else {
+                                  alreadyGuessed.add(num);
+                                  debugPrint('alGu: $alreadyGuessed');
+                                  // Check guess
+                                  for (i = 0; i < 4; i++) {
+                                    for (j = 0; j < 4; j++) {
+                                      if (req[i] == ans[j]) {
+                                        if (i != j)
+                                          c++;
+                                        else {
+                                          b++;
+                                          if (b == 4) {
+                                            finalScore = currScore + 1;
+                                            key.currentState.showSnackBar(
+                                              new SnackBar(
+                                                duration: Duration(seconds: 30),
+                                                backgroundColor:
+                                                    Color(0xff00aa70),
+                                                content: new Text(
+                                                  'You GUESSED the number in $finalScore turn(s)!',
+                                                  textAlign: TextAlign.center,
+                                                  style: TextStyle(
+                                                      color: Colors.white),
+                                                ),
+                                                action: SnackBarAction(
+                                                  label: 'Play Again',
+                                                  textColor: Color(0xff20233e),
+                                                  onPressed: () {
+                                                    currScore = 0;
+                                                    n1 = 1;
+                                                    n2 = 1;
+                                                    n3 = 1;
+                                                    n4 = 1;
+                                                    b = 0;
+                                                    c = 0;
+                                                    arr.shuffle();
+                                                    r1 = arr[0];
+                                                    r2 = arr[1];
+                                                    r3 = arr[2];
+                                                    r4 = arr[3];
+                                                    guesses = '';
+                                                    num = 0;
+                                                    flag = 0;
+                                                    alreadyGuessed?.clear();
+                                                    setState(() {});
+                                                    debugPrint(
+                                                        '$r1\t$r2\t$r3\t$r4\n');
+                                                  },
+                                                ),
                                               ),
-                                            ),
-                                          );
+                                            );
+                                          }
                                         }
                                       }
                                     }
                                   }
+                                  currScore++;
+                                  guesses += '\n$n1$n2$n3$n4: $b B, $c C';
+                                  setState(() {});
+                                  debugPrint('Req:$r1$r2$r3$r4');
+                                  debugPrint('Guess:$n1$n2$n3$n4');
+                                  debugPrint('Turn #: $currScore\n');
+                                  b = 0;
+                                  c = 0;
                                 }
-                                currScore++;
-                                guesses += '\n$n1$n2$n3$n4: $b B, $c C';
-                                setState(() {});
-                                debugPrint('Req:$r1$r2$r3$r4');
-                                debugPrint('Guess:$n1$n2$n3$n4');
-                                debugPrint('Turn #: $currScore\n');
-                                b = 0;
-                                c = 0;
+
+                                // for (i = 0; i < 4; i++) {
+                                //   for (j = 0; j < 4; j++) {
+                                //     if (req[i] == ans[j]) {
+                                //       if (i != j)
+                                //         c++;
+                                //       else {
+                                //         b++;
+                                //         if (b == 4) {
+                                //           key.currentState.showSnackBar(
+                                //             new SnackBar(
+                                //               backgroundColor:
+                                //                   Color(0xff00aa70),
+                                //               content: new Text(
+                                //                 'You GUESSED the number in $currScore turn(s)!',
+                                //                 textAlign: TextAlign.center,
+                                //                 style: TextStyle(
+                                //                     color: Colors.white),
+                                //               ),
+                                //             ),
+                                //           );
+                                //         }
+                                //       }
+                                //     }
+                                //   }
+                                // }
+                                // currScore++;
+                                // guesses += '\n$n1$n2$n3$n4: $b B, $c C';
+                                // setState(() {});
+                                // debugPrint('Req:$r1$r2$r3$r4');
+                                // debugPrint('Guess:$n1$n2$n3$n4');
+                                // debugPrint('Turn #: $currScore\n');
+                                // b = 0;
+                                // c = 0;
                               }
                             },
                             child: Text(
