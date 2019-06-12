@@ -1119,9 +1119,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                                     Color(0xff00aa70),
                                                 content: new Text(
                                                   'You GUESSED the number in $finalScore turn(s)!',
-                                                  textAlign: TextAlign.center,
+                                                  textAlign: TextAlign.left,
                                                   style: TextStyle(
-                                                      color: Colors.white),
+                                                      color: Colors.white,
+                                                      fontWeight:
+                                                          FontWeight.w200),
                                                 ),
                                                 action: SnackBarAction(
                                                   label: 'Play Again',
